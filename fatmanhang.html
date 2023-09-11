@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <title>Fatman-hang</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #26313d, #7a99bb);
+    
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .container {
+      background: linear-gradient(to bottom, #526f8d, #afbac5);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    h1 {
+      color: #000000;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #hangmanPic {
+      max-width: 100%;
+
+    }
+
+    #wordSpotlight {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    #userInput {
+      font-size: 18px;
+      padding: 5px;
+      width: 40px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+    .parttion{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><strong>Fatman-</strong>hang</h1>
+    <div class="float-right"><strong>Wrong Guesses: </strong><span id='mistakes'><strong>0</strong></span> of <strong><span id='maxWrong'></strong></span></div><br>
+    <div class="float-right"><strong>Games Won: </strong><span id='gamesWon'>0</span></div><br>
+    <div class="float-right"><strong>Games Lost: </strong><span id='gamesLost'>0</span></div>
+
+    <div class="text-center">
+      <img id='hangmanPic' src="./img/0.jpg" alt="" style="background-image: url(./img/footer-form-bg.png); border-radius: 15px;">
+      <strong><p>Guess the Programming Language:</p></strong>
+      <p id="wordSpotlight">_ _ _ _ _ _ _</p>
+      <div class="parttion">
+        <input type="text" id="userInput" oninput="handleInput()" maxlength="1" autocomplete="off" autocorrect="off" autocapitalize="off"><br>
+        <button class="btn btn-info" onClick="reset()">New Game</button>
+      </div>
+    </div>
+  </div>
+  <script src='./hangman.js'></script>
+</body>
+</html>
